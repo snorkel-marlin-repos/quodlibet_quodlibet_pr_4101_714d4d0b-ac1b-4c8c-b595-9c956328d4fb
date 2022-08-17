@@ -1,0 +1,22 @@
+# This gets copied to $HOME/.jhbuildrc-custom and gets included by the gtk-osx
+# provided ``.jhbuildrc`` file
+
+import os
+
+checkoutroot = os.path.expanduser("~/jhbuild_checkoutroot")
+prefix = os.path.expanduser("~/jhbuild_prefix")
+modulesets_dir = os.environ["QL_OSXBUNDLE_MODULESETS_DIR"]
+moduleset = ["quodlibet"]
+modules = []
+
+setup_sdk(target="10.13", sdk_version="native")
+
+os.environ["GTLS_SYSTEM_CA_FILE"] = "/etc/ssl/cert.pem"
+
+os.environ["SSL_CERT_FILE"] = "/etc/ssl/cert.pem"
+
+addpath("DYLD_FALLBACK_LIBRARY_PATH", "/usr/lib")
+
+# Make sure we use the same shell in "jhbuild shell" as during building
+if os.environ.get("CONFIG_SHELL"):
+    os.environ["SHELL"] = os.environ.get("CONFIG_SHELL")

@@ -1,0 +1,61 @@
+*.pyc
+*.pyo
+*.so
+*.swp
+*.rej
+*.orig
+*.cache
+*.cover
+*.mo
+*.tar.gz
+*.tar.xz
+MANIFEST
+.DS_Store
+*.egg-info
+*.exe
+
+po/missing
+po/notexist
+
+# Sphinx build files
+docs/_build*/*
+docs/_rtd_theme*
+
+# Ignore build files
+build/*
+dist/*
+
+# Ignore Eclipse files
+.buildpath
+.project
+.settings/*
+.pydevproject
+.vscode/*
+
+# And IDEA
+.idea/*
+
+# Windows Installer
+dev-utils/win_installer/_build_root
+dev-utils/win_installer/_rebuild_root
+
+# OS X Bundle
+dev-utils/osx_bundle/_home
+dev-utils/osx_bundle/_build
+dev-utils/osx_bundle/_bundler
+dev-utils/osx_bundle/_jhbuild
+
+# coverage.py html report
+coverage/*
+.coverage
+
+# mypy
+.mypy_cache
+
+.pytest_cache
+test-results
+Pipfile.lock
+
+# Common virtualenvs
+.venv/
+venv/
