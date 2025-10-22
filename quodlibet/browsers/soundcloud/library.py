@@ -159,7 +159,7 @@ class SoundcloudFile(RemoteFile):
         if k is None:
             return ["~rating", "~#rating"]
         else:
-            return k.endswith("rating")
+            return "rating" in k
 
     def write(self):
         if not self.client or not self.client.online:
